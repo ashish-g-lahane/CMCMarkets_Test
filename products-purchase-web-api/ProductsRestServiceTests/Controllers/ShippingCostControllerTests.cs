@@ -29,25 +29,25 @@ namespace ProductsRestServiceTests.Controllers
 
         private ShippingCostController CreateShippingCostController()
         {
-            return new ShippingCostController(
-                this.mockShippingCostService.Object);
+            return new ShippingCostController(this.mockShippingCostService.Object);
         }
 
         [Test]
         public void GetShippingCost_CallsShippingCostService_ReturnsWhatShippingCostSvcReturns()
         {
-            int orderCost = 60, shippingCost = 20;
+            int orderCost = 60, shippingCost = 20, fwdedInputToSvc = -1;
 
-            this.mockShippingCostService.Setup(m => m.GetShippingCost(orderCost)).Returns(shippingCost);
+            this.mockShippingCostService.Setup(m => m.GetShippingCost(orderCost)).Callback<int>(ip => fwdedInputToSvc = (int)ip).Returns(shippingCost);
 
             // Arrange
             var shippingCostController = this.CreateShippingCostController();
-            
+
 
             // Act
             var result = shippingCostController.GetShippingCost(orderCost);
 
             // Assert
+            Assert.AreEqual(orderCost, fwdedInputToSvc);
             Assert.AreEqual(result, shippingCost);
         }
     }
