@@ -2,9 +2,10 @@ import React, {useCallback} from "react";
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import RemoveShoppingCart from '@material-ui/icons/RemoveShoppingCart';
 import {IconButton} from "@material-ui/core";
-import {BasketActionType, useBasketActionDispatcher, useBasketHasProd} from "../BasketState";
+import {BasketActionType} from "../BasketState";
 import {ICellRendererParams} from "ag-grid-community";
 import {IProduct} from "../domain-objects";
+import {useBasketActionDispatcher, useBasketHasProd} from "../BasketState/BasketStateHooks";
 
 export const AddRemoveCellRenderer: React.FC<ICellRendererParams> = (props: ICellRendererParams ) => {
 

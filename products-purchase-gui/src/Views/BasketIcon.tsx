@@ -1,7 +1,7 @@
 import React from 'react';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
 import {Badge, createStyles, makeStyles, Theme, Typography} from "@material-ui/core";
-import {useBasketCount} from "../BasketState";
+import {useBasketCount} from "../BasketState/BasketStateHooks";
 
 
 const useStyles = makeStyles((theme: Theme) =>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {usePlaceOrder} from "../../ServerCommunication/ProductsPurchaseServiceManagerHooks";
-import {useBasketedProducts} from "../../BasketState";
 import {CircularProgress} from "@material-ui/core";
+import {useBasketedProducts} from "../../BasketState/BasketStateHooks";
 
 const PlaceOrder: React.FC = () => {
 

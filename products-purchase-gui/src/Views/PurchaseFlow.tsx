@@ -3,7 +3,7 @@ import SelectProducts from "./Steps/SelectProducts";
 import {Button, Step, StepLabel, Stepper} from "@material-ui/core";
 import BasketReview from "./Steps/BasketReview";
 import PlaceOrder from "./Steps/PlaceOrder";
-import {useIsBasketEmpty} from "../BasketState";
+import {useIsBasketEmpty} from "../BasketState/BasketStateHooks";
 
 const getStepLabel = (step: number):string => {
     return step === 0 ?

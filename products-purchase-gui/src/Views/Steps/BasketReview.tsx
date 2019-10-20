@@ -1,8 +1,8 @@
 import React from 'react';
 import {Typography} from "@material-ui/core";
-import {useBasketedProducts, useBasketTotalPrice} from "../../BasketState";
 import ProductList from "../ProductList";
 import {useShippingCost} from "../../ServerCommunication/ProductsPurchaseServiceManagerHooks";
+import {useBasketedProducts, useBasketTotalPrice} from "../../BasketState/BasketStateHooks";
 
 const BasketReview: React.FC = () => {
 
