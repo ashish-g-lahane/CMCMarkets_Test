@@ -1,6 +1,6 @@
-#Antivirus software store App
+# Antivirus software store App
 
-##Server
+## Server
 Server has been developed using the following:
 - .Net Core 3 WebApi
 
@@ -8,7 +8,7 @@ To start the server, please run
 
 ```buildAndStart_webApi.bat```
 
-##GUI
+## GUI
 GUI has been developed using the following:
 - ReactJS
 - Typescript
