@@ -19,24 +19,24 @@ class ProductsPurchaseServiceManager implements IProductsPurchaseServiceManager 
 
     }
 
-    public getProducts = (productsResponseHandler: ProductsResponseHandler): void => {
+    public getProducts(productsResponseHandler: ProductsResponseHandler): void {
 
         axios.get<IProduct[]>("https://localhost:5001/ProductCatalogue")
             .then(r => productsResponseHandler(r.data))
             .catch(e => console.error(e));
-    };
+    }
 
-    public getShippingCost = (cartValue: number, shippingCostResponseHandler: ShippingCostResponseHandler): void => {
+    public getShippingCost(cartValue: number, shippingCostResponseHandler: ShippingCostResponseHandler): void {
         axios.get<number>(`https://localhost:5001/ShippingCost/${cartValue}`)
             .then(r => shippingCostResponseHandler(r.data))
             .catch(e => console.error(e));
-    };
+    }
 
-    public placeOrder = (products :IProduct[], placeOrderResponseHandler: PlaceOrderResponseHandler): void => {
+    public placeOrder(products: IProduct[], placeOrderResponseHandler: PlaceOrderResponseHandler): void {
         axios.post<IProduct[], any>(`https://localhost:5001/PlaceOrder/`, products)
             .then(r => placeOrderResponseHandler(r.data as boolean))
             .catch(e => console.error(e));
-    };
+    }
 }
 
 export default ProductsPurchaseServiceManager.Instance;
